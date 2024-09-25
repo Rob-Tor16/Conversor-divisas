@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+}
+
+
+.img-logo{
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+p{
+    text-align: center;
+}
+
+button {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 3px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+   }
+   
+   .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+   
+   .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+       to left,
+       hsl(167, 93%, 40%) 0%,
+       #00FECA,
+       #00FECA,
+       hsl(167, 93%, 40%) 0%
+     );
+   }
+   
+   .front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: #00FECA;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+   
+   button:hover {
+    filter: brightness(110%);
+   }
+   
+   button:hover .front {
+    transform: translateY(-6px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+   
+   button:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+   }
+   
+   button:hover .shadow {
+    transform: translateY(4px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+   
+   button:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+   }
+   
+   button:focus:not(:focus-visible) {
+    outline: none;
+   }
+
+   .container{
+    gap: 2px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   .moneda{
+    padding: 40px 0px;
+    display: flex;
+    align-items: center;
+   }
+
+   .moneda select{
+    padding: 10px 20px 10px 10px;
+    border: 1px solid grey;
+    font-size: 16px;
+   }
+
+   .moneda input{
+    border: none;
+    background-color: rgba(236, 236, 236, 0.918);
+    font-size: 30px;
+    text-align: right;
+   }
+
+   .card {
+    padding: 15px;
+    background: rgb(236, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+
+  .cambio-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cambio{
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  select:focus, input:focus, button:focus{
+    outline: 0;
+  }
+
+  @media (max-width:600px){
+    .moneda input {
+        width: 200px;
+    }
+
+    .card{
+        width: 400px;
+    }
+  }
+
+  @media(max-width:434px){
+    .card{
+        width: 350px;
+    }
+  }
